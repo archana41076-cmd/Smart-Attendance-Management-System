@@ -1,0 +1,446 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f5f7fb;
+    color: #333;
+}
+
+
+/* Header */
+
+header {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 28px 50px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: auto;
+}
+
+header h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 14px;
+    color: #dbeafe;
+}
+
+
+/* Main area */
+
+main {
+    max-width: 1400px;
+    margin: auto;
+    padding: 30px 45px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+
+/* Section headings */
+
+.section-title {
+    margin-bottom: 20px;
+}
+
+.section-title h2 {
+    color: #1e3a8a;
+    font-size: 22px;
+    margin-bottom: 4px;
+}
+
+.section-title p {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+
+/* Dashboard cards */
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 22px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.students-icon {
+    background-color: #e8f0fe;
+    color: #2563eb;
+}
+
+.records-icon {
+    background-color: #f3e8ff;
+    color: #7c3aed;
+}
+
+.present-icon {
+    background-color: #dcfce7;
+    color: #15803d;
+}
+
+.absent-icon {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+.stat-card h3 {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 3px;
+}
+
+.stat-card p {
+    font-size: 27px;
+    font-weight: bold;
+    color: #1e3a8a;
+}
+
+.stat-card:nth-child(3) p {
+    color: #15803d;
+}
+
+.stat-card:nth-child(4) p {
+    color: #dc2626;
+}
+
+
+/* Main content boxes */
+
+.content-section {
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 28px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+
+/* Forms */
+
+.form-container {
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+}
+
+input,
+select {
+    height: 40px;
+    padding: 8px 11px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+
+    font-size: 14px;
+    color: #333;
+    background-color: white;
+
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+
+/* Buttons */
+
+button {
+    height: 40px;
+    padding: 0 17px;
+
+    border: none;
+    border-radius: 6px;
+
+    background-color: #2563eb;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* Student list */
+
+#studentList {
+    margin-top: 15px;
+}
+
+.student-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #f8fafc;
+    border: 1px solid #e5e7eb;
+
+    padding: 12px 15px;
+    margin-bottom: 8px;
+
+    border-radius: 6px;
+}
+
+.student-row span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+}
+
+
+/* Submit attendance */
+
+#markAttendanceBtn {
+    background-color: #16a34a;
+    margin-top: 10px;
+}
+
+#markAttendanceBtn:hover {
+    background-color: #15803d;
+}
+
+#attendanceMessage {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #15803d;
+}
+
+
+/* Table */
+
+.table-container {
+    overflow-x: auto;
+    margin-top: 18px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #eff6ff;
+}
+
+th {
+    text-align: left;
+    padding: 13px 15px;
+
+    font-size: 13px;
+    color: #1e3a8a;
+
+    border-bottom: 2px solid #dbeafe;
+}
+
+td {
+    padding: 13px 15px;
+
+    font-size: 14px;
+    color: #4b5563;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+.empty-message {
+    text-align: center;
+    color: #6b7280;
+    padding: 25px;
+}
+
+
+/* Attendance status */
+
+.status-badge {
+    display: inline-block;
+
+    padding: 4px 10px;
+    border-radius: 15px;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-present {
+    background-color: #dcfce7;
+    color: #15803d;
+}
+
+.status-absent {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+.status-leave {
+    background-color: #fef3c7;
+    color: #b45309;
+}
+
+
+/* Summary */
+
+#summaryResult,
+#lowAttendanceResult {
+    margin-top: 15px;
+}
+
+.summary-card {
+    background-color: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+
+    padding: 18px;
+    margin-bottom: 12px;
+}
+
+.summary-card h3 {
+    color: #1e3a8a;
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.summary-card p {
+    font-size: 14px;
+    color: #4b5563;
+    margin: 4px 0;
+}
+
+.summary-card h3:last-child {
+    margin-top: 12px;
+    color: #2563eb;
+}
+
+
+/* Low attendance */
+
+#lowAttendanceResult .summary-card {
+    border-left: 4px solid #dc2626;
+}
+
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 10px;
+
+    border-top: 1px solid #e5e7eb;
+
+    color: #6b7280;
+    font-size: 13px;
+}
+
+
+/* Responsive design */
+
+@media (max-width: 1000px) {
+
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    main {
+        padding: 25px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 22px;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    main {
+        padding: 20px 15px;
+    }
+
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+
+    .content-section {
+        padding: 20px;
+    }
+
+    .form-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    input,
+    select,
+    button {
+        width: 100%;
+    }
+
+    .student-row {
+        gap: 10px;
+    }
+}

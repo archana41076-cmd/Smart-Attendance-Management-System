@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Attendance Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <h1>Smart Attendance Management System</h1>
+            <p>Manage students, subjects and attendance records</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- Dashboard -->
+        <section class="dashboard">
+
+            <div class="section-title">
+                <h2>Dashboard Overview</h2>
+                <p>Quick view of attendance information</p>
+            </div>
+
+            <div class="stats-container">
+
+                <div class="stat-card">
+                    <div class="stat-icon students-icon">
+                        👨‍🎓
+                    </div>
+
+                    <div>
+                        <h3>Total Students</h3>
+                        <p id="totalStudents">0</p>
+                    </div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-icon records-icon">
+                        📋
+                    </div>
+
+                    <div>
+                        <h3>Attendance Records</h3>
+                        <p id="totalRecords">0</p>
+                    </div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-icon present-icon">
+                        ✓
+                    </div>
+
+                    <div>
+                        <h3>Present Students</h3>
+                        <p id="presentCount">0</p>
+                    </div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-icon absent-icon">
+                        ✕
+                    </div>
+
+                    <div>
+                        <h3>Absent Students</h3>
+                        <p id="absentCount">0</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Mark Attendance -->
+        <section class="content-section">
+
+            <div class="section-title">
+                <h2>Mark Attendance</h2>
+                <p>Select a subject and date to mark attendance</p>
+            </div>
+            <div class="form-container">
+
+                <div class="form-group">
+                    <label for="subjectId">Subject ID</label>
+                    <input
+                        type="number"
+                        id="subjectId"
+                        value="1"
+                        min="1">
+                </div>
+
+                <div class="form-group">
+                    <label for="attendanceDate">Attendance Date</label>
+                    <input
+                        type="date"
+                        id="attendanceDate">
+                </div>
+                <button onclick="loadStudents()">
+                    Load Students
+                </button>
+
+            </div>
+            <div id="studentList"></div>
+            <button
+                id="markAttendanceBtn"
+                onclick="markAttendance()"
+                style="display: none;">
+
+                Submit Attendance
+
+            </button>
+            <p id="attendanceMessage"></p>
+
+        </section>
+        <!-- Attendance Records -->
+        <section class="content-section">
+
+            <div class="section-title">
+                <h2>Attendance Records</h2>
+                <p>View attendance records for the selected subject</p>
+            </div>
+            <button onclick="loadAttendanceRecords()">
+                View Attendance Records
+            </button>
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Roll Number</th>
+                            <th>Subject</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="attendanceTable">
+
+                        <tr>
+                            <td colspan="5" class="empty-message">
+                                Click "View Attendance Records" to load data.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+
+        <!-- Attendance Summary -->
+        <section class="content-section">
+
+            <div class="section-title">
+                <h2>Student Attendance Summary</h2>
+                <p>Check the attendance percentage of a student</p>
+            </div>
+
+            <div class="form-container">
+
+                <div class="form-group">
+                    <label for="studentId">Student ID</label>
+
+                    <input
+                        type="number"
+                        id="studentId"
+                        value="1"
+                        min="1">
+                </div>
+
+
+                <div class="form-group">
+                    <label for="summarySubjectId">Subject ID</label>
+                    <input
+                        type="number"
+                        id="summarySubjectId"
+                        value="1"
+                        min="1">
+                </div>
+
+
+                <button onclick="loadSummary()">
+                    View Summary
+                </button>
+            </div>
+
+
+            <div id="summaryResult"></div>
+        </section>
+
+
+        <!-- Low Attendance -->
+        <section class="content-section">
+
+            <div class="section-title">
+                <h2>Low Attendance Students</h2>
+                <p>Find students whose attendance is below the selected percentage</p>
+            </div>
+
+
+            <div class="form-container">
+                <div class="form-group">
+                    <label for="threshold">
+                        Attendance Threshold (%)
+                    </label>
+                    <input
+                        type="number"
+                        id="threshold"
+                        value="75"
+                        min="0"
+                        max="100">
+                </div>
+
+
+                <button onclick="loadLowAttendance()">
+                    Find Students
+                </button>
+
+            </div>
+            <div id="lowAttendanceResult"></div>
+        </section>
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>Smart Attendance Management System &copy; 2026</p>
+    </footer>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
